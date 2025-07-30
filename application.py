@@ -1,9 +1,7 @@
 import torch, torchvision
 from torchvision import transforms
-from PIL import Image
 import model
 import gradio as gr
-import numpy as np
 
 model_save_path = './saved_models/classifier_model.pth'
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
