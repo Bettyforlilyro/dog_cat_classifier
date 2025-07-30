@@ -39,7 +39,7 @@ with torch.no_grad():
     for idx, (inputs, targets) in enumerate(data_process.val_dataloader):
         inputs, targets = inputs.to(model.device), targets.to(model.device)
         outputs = model.model_pretrained(inputs)
-        _, predicted = outputs.max(1)
+        _, predicted = outputs.max(1)   # outputs.max(1) 返回(值，索引)的张量
         total += targets.size(0)
         correct += predicted.eq(targets).sum().item()
     acc = 100 * correct / total
